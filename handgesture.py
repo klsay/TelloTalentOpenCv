@@ -12,6 +12,7 @@ hands = mp_hands.Hands(static_image_mode=False,
 # Open webcam
 cap = cv2.VideoCapture(0)
 
+#thumbup
 def is_thumb_up(hand_landmarks):
     thumb_tip = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
     thumb_ip = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_IP]
@@ -45,7 +46,7 @@ while cap.isOpened():
             mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             if is_thumb_up(hand_landmarks):
                 print("thumb up")
-                cv2.putText(image, "Thumb Up!", (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+                cv2.putText(image, "Thumb Up!", (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 0), 3)
 
     cv2.imshow('Thumbs Up Detection', image)
     if cv2.waitKey(5) & 0xFF == 27:  # Press Esc to exit

@@ -1,5 +1,2 @@
-numpy
-opencv-python
-cmake
-face_recognition
+djitellopy
 -e .
